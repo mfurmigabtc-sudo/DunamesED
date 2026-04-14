@@ -54,10 +54,10 @@ const Hero: React.FC = () => {
             <ChevronRight className="group-hover:translate-x-1 transition-transform" />
           </a>
           <a
-            href="#projetos"
+            href="#servicos"
             className="bg-transparent border-2 border-white hover:bg-white/10 text-white text-lg font-semibold px-8 py-4 rounded-lg transition-all"
           >
-            Ver Projetos
+            Ver Serviços
           </a>
         </div>
       </div>

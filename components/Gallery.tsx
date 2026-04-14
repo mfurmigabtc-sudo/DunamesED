@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { PlayCircle, X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 
-type Category = 'Todos' | 'Interiores' | 'Fachadas' | 'Obras' | 'Comercial';
+type Category = 'Todos' | 'Interiores' | 'Exteriores' | 'Fachadas' | 'Renders' | 'Arquitetônico' | 'Elétrico' | 'Hidrossanitário' | 'Executivo';
 
 interface Project {
   id: number;
@@ -16,55 +16,71 @@ const Gallery: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<Category>('Todos');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const categories: Category[] = ['Todos', 'Interiores', 'Fachadas', 'Obras', 'Comercial'];
+  const categories: Category[] = ['Todos', 'Interiores', 'Exteriores', 'Fachadas', 'Renders', 'Arquitetônico', 'Elétrico', 'Hidrossanitário', 'Executivo'];
 
   const projects: Project[] = [
     {
       id: 1,
-      category: 'Fachadas',
-      title: 'Residência Vale Verde',
-      subtitle: 'Tour Virtual Completo',
-      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop',
-      isVideo: true
+      category: 'Interiores',
+      title: 'Design de Interiores',
+      subtitle: 'Ambientes planejados e otimizados',
+      image: '/Interior_room_modern_202604141023.jpeg',
+      isVideo: false
     },
     {
       id: 2,
-      category: 'Interiores',
-      title: 'Sala de Estar Minimalista',
-      subtitle: 'Render 4K',
-      image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1974&auto=format&fit=crop',
+      category: 'Exteriores',
+      title: 'Áreas Externas',
+      subtitle: 'Paisagismo e áreas de lazer',
+      image: '/Exterior.jpg',
       isVideo: false
     },
     {
       id: 3,
-      category: 'Obras',
-      title: 'Execução Estrutural',
-      subtitle: 'Acompanhamento Técnico',
-      image: 'https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?q=80&w=1974&auto=format&fit=crop',
+      category: 'Fachadas',
+      title: 'Fachadas Modernas',
+      subtitle: 'Design exterior e volumetria',
+      image: '/Exterior.jpg',
       isVideo: false
     },
     {
       id: 4,
-      category: 'Fachadas',
-      title: 'Casa de Campo',
-      subtitle: 'Projeto Arquitetônico',
-      image: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?q=80&w=1965&auto=format&fit=crop',
+      category: 'Renders',
+      title: 'Visualização 3D',
+      subtitle: 'Imagens fotorrealistas',
+      image: '/Render_projeto_desenho_202604141028.jpeg',
       isVideo: false
     },
     {
       id: 5,
-      category: 'Comercial',
-      title: 'Escritório Corporativo',
-      subtitle: 'Reforma e Design',
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop',
+      category: 'Arquitetônico',
+      title: 'Projeto Arquitetônico',
+      subtitle: 'Concepção e planta baixa',
+      image: '/Computer_screen_with_202604141453.jpeg',
       isVideo: false
     },
     {
       id: 6,
-      category: 'Interiores',
-      title: 'Cozinha Planejada',
-      subtitle: 'Detalhamento de Marcenaria',
-      image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2070&auto=format&fit=crop',
+      category: 'Elétrico',
+      title: 'Projeto Elétrico',
+      subtitle: 'Distribuição e dimensionamento',
+      image: '/Tela_projeto_elétrico_202604141033.jpeg',
+      isVideo: false
+    },
+    {
+      id: 7,
+      category: 'Hidrossanitário',
+      title: 'Projeto Hidrossanitário',
+      subtitle: 'Instalações de água e esgoto',
+      image: '/Revit_screen_sanitary_202604141034.jpeg',
+      isVideo: false
+    },
+    {
+      id: 8,
+      category: 'Executivo',
+      title: 'Projeto Executivo',
+      subtitle: 'Detalhamento técnico para obra',
+      image: '/Projeto_executivo_no_202604141035.jpeg',
       isVideo: false
     }
   ];
@@ -109,14 +125,14 @@ const Gallery: React.FC = () => {
   }, [selectedProject, handleNext, handlePrev]);
 
   return (
-    <section id="projetos" className="py-20 bg-gray-50 scroll-mt-28">
+    <section id="servicos" className="py-20 bg-gray-50 scroll-mt-28">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            Galeria de Projetos
+            NOSSOS SERVIÇOS
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Explore nosso portfólio dividido por categorias. Clique nas imagens para ampliar.
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+            Oferecemos uma gama completa de soluções para a sua obra. Desde a concepção visual com renders fotorrealistas de interiores e fachadas, até o detalhamento técnico rigoroso dos projetos arquitetônico, elétrico, hidrossanitário e executivo.
           </p>
         </div>
 
