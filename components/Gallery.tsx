@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { PlayCircle, X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 
-type Category = 'Todos' | 'Interiores' | 'Exteriores' | 'Fachadas' | 'Renders' | 'Arquitetônico' | 'Elétrico' | 'Hidrossanitário' | 'Executivo';
+type Category = 'Todos' | 'Interiores' | 'Exteriores' | 'Fachadas' | 'Renders' | 'Arquitetônico' | 'Elétrico' | 'Hidrossanitário' | 'Executivo' | 'Render I.A.';
 
 interface Project {
   id: number;
@@ -16,7 +16,7 @@ const Gallery: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<Category>('Todos');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const categories: Category[] = ['Todos', 'Interiores', 'Exteriores', 'Fachadas', 'Renders', 'Arquitetônico', 'Elétrico', 'Hidrossanitário', 'Executivo'];
+  const categories: Category[] = ['Todos', 'Interiores', 'Exteriores', 'Fachadas', 'Renders', 'Arquitetônico', 'Elétrico', 'Hidrossanitário', 'Executivo', 'Render I.A.'];
 
   const projects: Project[] = [
     {
@@ -40,7 +40,7 @@ const Gallery: React.FC = () => {
       category: 'Fachadas',
       title: 'Fachadas Modernas',
       subtitle: 'Design exterior e volumetria',
-      image: '/Exterior.jpg',
+      image: '/fachada_moderna_de_202604141054.jpeg',
       isVideo: false
     },
     {
@@ -81,6 +81,14 @@ const Gallery: React.FC = () => {
       title: 'Projeto Executivo',
       subtitle: 'Detalhamento técnico para obra',
       image: '/Projeto_executivo_no_202604141035.jpeg',
+      isVideo: false
+    },
+    {
+      id: 9,
+      category: 'Render I.A.',
+      title: 'Render com I.A.',
+      subtitle: 'Geração de imagens com Inteligência Artificial',
+      image: '/AI_robot_with_202604141543.jpeg',
       isVideo: false
     }
   ];
